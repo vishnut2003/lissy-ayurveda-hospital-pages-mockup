@@ -11,10 +11,7 @@
   const navToggle = document.getElementById("navToggle");
   const navBackdrop = document.getElementById("navBackdrop");
   const toTop = document.getElementById("toTop");
-  const navLinks = Array.from(document.querySelectorAll(".nav__link"));
-  const sections = navLinks
-    .map((link) => document.querySelector(link.getAttribute("href")))
-    .filter(Boolean);
+  // Active state is set per page in the HTML (nav links point to separate pages).
 
   /* ---------- Footer year ---------- */
   const year = document.getElementById("year");
@@ -68,16 +65,6 @@
     const y = window.scrollY || window.pageYOffset;
     header.classList.toggle("is-scrolled", y > 10);
     toTop.classList.toggle("is-visible", y > 600);
-
-    // Highlight the nav link for the section currently in view
-    const offset = header.offsetHeight + 120;
-    let current = sections[0];
-    for (const section of sections) {
-      if (section.getBoundingClientRect().top - offset <= 0) current = section;
-    }
-    navLinks.forEach((link) => {
-      link.classList.toggle("is-active", link.getAttribute("href") === "#" + current.id);
-    });
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
