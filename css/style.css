@@ -1225,6 +1225,25 @@ svg { fill: currentColor; }
 .footer__col a { transition: color .2s, padding-left .2s; }
 .footer__col a:hover { color: #9fd7ad; padding-left: 4px; }
 
+/* ---------- Photo mosaic (rooms) ---------- */
+.mosaic { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.mosaic--4 { grid-template-columns: repeat(4, 1fr); max-width: 1040px; margin: 22px auto 0; }
+.mosaic__item {
+  position: relative; margin: 0; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3;
+  background: var(--green-50); box-shadow: var(--shadow-sm);
+}
+.mosaic__item a { display: block; width: 100%; height: 100%; }
+.mosaic__item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.mosaic__item:hover img { transform: scale(1.06); }
+.mosaic__item figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 14px 12px; pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(20,61,39,.82)); color: var(--white); font-weight: 700; font-size: .86rem;
+}
+.mosaic__more { margin: 26px 0 48px; }
+.video .mosaic__item figcaption { font-size: .8rem; padding: 24px 12px 10px; }
+@media (max-width: 960px) { .mosaic, .mosaic--4 { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
+@media (max-width: 480px) { .mosaic__item figcaption { font-size: .78rem; } }
+
 /* ---------- Inaugurated-by highlight ---------- */
 .inaugurator {
   position: relative; overflow: hidden; display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center;
