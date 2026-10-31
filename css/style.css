@@ -1001,6 +1001,7 @@ svg { fill: currentColor; }
 .gallery__item--wide video { width: 100%; height: 100%; display: block; object-fit: cover; aspect-ratio: 16 / 9; }
 .gallery__item--contain img { object-fit: contain; background: var(--white); }
 .gallery__item--contain:hover img { transform: none; }
+.gallery__item--person img { background: linear-gradient(180deg, var(--green-50), var(--green-100)); padding: 10px 0 0; }
 
 /* ---------- Hours ---------- */
 .hours { display: grid; gap: 4px; margin: 0; }
@@ -1253,29 +1254,48 @@ svg { fill: currentColor; }
 .inaugurator__meta a { color: var(--green-700); }
 .inaugurator__meta a:hover { text-decoration: underline; }
 
+/* blessing card variant */
+.inaugurator--blessing { grid-template-columns: 300px 1fr; gap: 44px; }
+.inaugurator--blessing::before { background: radial-gradient(circle, rgba(92,184,92,.16), transparent 65%); }
+.inaugurator__portrait {
+  position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 3 / 4; background: var(--green-100);
+  box-shadow: var(--shadow-sm); border: 6px solid var(--white); outline: 1px solid var(--line);
+}
+.inaugurator__portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+.inaugurator__portrait .inaugurator__date { left: 12px; bottom: 12px; }
+.inaugurator--blessing .inaugurator__role { color: var(--green-700); }
+
 /* compact band on Home */
 .inaug-band { background: var(--green-50); padding: 56px 0; }
-.inaugurator--band { grid-template-columns: 128px 1fr auto; gap: 28px; padding: 22px 30px 22px 22px; margin: 0; }
-.inaugurator__avatar { width: 128px; height: 128px; border-radius: 50%; overflow: hidden; border: 4px solid var(--saffron-100); box-shadow: var(--shadow-sm); }
-.inaugurator__avatar img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
-.inaugurator--band .inaugurator__name { font-size: clamp(1.6rem, 2.4vw, 2.1rem); }
+.inaug-band__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.inaugurator--band { grid-template-columns: 112px 1fr; gap: 22px; padding: 20px 26px 20px 20px; margin: 0; }
+.inaugurator__avatar { width: 112px; height: 112px; border-radius: 50%; overflow: hidden; border: 4px solid var(--saffron-100); box-shadow: var(--shadow-sm); }
+.inaugurator__avatar--blessing { border-color: var(--green-100); }
+.inaugurator__avatar--blessing + .inaugurator__body .inaugurator__role { color: var(--green-700); }
+.inaug-band .press__more { margin-top: 26px; }
+.inaugurator__avatar img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+.inaugurator--band .inaugurator__name { font-size: clamp(1.45rem, 2vw, 1.8rem); }
+.inaugurator--band .inaugurator__role { font-size: .9rem; }
 .inaugurator--band .inaugurator__role { margin-bottom: 0; }
 .inaugurator__cta { position: relative; }
 
 @media (max-width: 1080px) {
-  .inaugurator--band { grid-template-columns: 110px 1fr; }
-  .inaugurator__avatar { width: 110px; height: 110px; }
-  .inaugurator__cta { grid-column: 1 / -1; }
+  .inaugurator--band { grid-template-columns: 96px 1fr; gap: 18px; }
+  .inaugurator__avatar { width: 96px; height: 96px; }
+  .inaugurator--blessing { grid-template-columns: 240px 1fr; gap: 32px; }
 }
 @media (max-width: 960px) {
-  .inaugurator { grid-template-columns: 1fr; gap: 24px; padding: 18px; margin-bottom: 44px; }
+  .inaugurator, .inaugurator--blessing { grid-template-columns: 1fr; gap: 24px; padding: 18px; margin-bottom: 44px; }
+  .inaugurator__portrait { max-width: 260px; }
+  .inaug-band__grid { grid-template-columns: 1fr; gap: 16px; }
   .inaugurator__body { padding-right: 0; }
   .inaug-band { padding: 44px 0; }
 }
 @media (max-width: 640px) {
   .inaugurator--band { grid-template-columns: 1fr; text-align: center; justify-items: center; padding: 22px 18px; }
   .inaugurator--band .eyebrow { justify-content: center; }
-  .inaugurator__cta .btn { width: 100%; }
+  .inaug-band .press__more .btn { width: 100%; }
+  .inaugurator__portrait { max-width: 220px; margin: 0 auto; }
 }
 
 @media (max-width: 960px) {
