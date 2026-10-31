@@ -1224,6 +1224,60 @@ svg { fill: currentColor; }
 .footer__col a { transition: color .2s, padding-left .2s; }
 .footer__col a:hover { color: #9fd7ad; padding-left: 4px; }
 
+/* ---------- Inaugurated-by highlight ---------- */
+.inaugurator {
+  position: relative; overflow: hidden; display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 24px;
+  box-shadow: var(--shadow); margin: 0 0 56px;
+}
+.inaugurator::before {
+  content: ""; position: absolute; right: -120px; top: -120px; width: 360px; height: 360px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(227,154,43,.18), transparent 65%); pointer-events: none;
+}
+.inaugurator__photo { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3; background: var(--green-100); box-shadow: var(--shadow-sm); }
+.inaugurator__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 35% 50%; }
+.inaugurator__date {
+  position: absolute; left: 16px; bottom: 16px; display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(20,61,39,.82); color: var(--white); backdrop-filter: blur(4px);
+  border-radius: 999px; padding: 8px 14px 8px 10px; font-size: .8rem; font-weight: 700; letter-spacing: .04em;
+}
+.inaugurator__date .icon { width: 18px; height: 18px; color: #ffd98a; }
+.inaugurator__body { position: relative; padding-right: 12px; }
+.inaugurator__body .eyebrow { margin-bottom: 10px; }
+.inaugurator__name { font-family: var(--font-head); font-size: clamp(1.9rem, 3vw, 2.6rem); font-weight: 700; color: var(--green-900); line-height: 1.1; margin-bottom: 6px; }
+.inaugurator__role { color: var(--saffron-600); font-weight: 700; margin-bottom: 16px; }
+.inaugurator__text { color: var(--ink-soft); font-size: .97rem; line-height: 1.65; margin-bottom: 18px; }
+.inaugurator__meta { display: grid; gap: 8px; }
+.inaugurator__meta li { display: flex; align-items: center; gap: 10px; font-size: .9rem; color: var(--ink-soft); font-weight: 600; }
+.inaugurator__meta .icon { width: 18px; height: 18px; color: var(--green-600); }
+.inaugurator__meta a { color: var(--green-700); }
+.inaugurator__meta a:hover { text-decoration: underline; }
+
+/* compact band on Home */
+.inaug-band { background: var(--green-50); padding: 56px 0; }
+.inaugurator--band { grid-template-columns: 128px 1fr auto; gap: 28px; padding: 22px 30px 22px 22px; margin: 0; }
+.inaugurator__avatar { width: 128px; height: 128px; border-radius: 50%; overflow: hidden; border: 4px solid var(--saffron-100); box-shadow: var(--shadow-sm); }
+.inaugurator__avatar img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.inaugurator--band .inaugurator__name { font-size: clamp(1.6rem, 2.4vw, 2.1rem); }
+.inaugurator--band .inaugurator__role { margin-bottom: 0; }
+.inaugurator__cta { position: relative; }
+
+@media (max-width: 1080px) {
+  .inaugurator--band { grid-template-columns: 110px 1fr; }
+  .inaugurator__avatar { width: 110px; height: 110px; }
+  .inaugurator__cta { grid-column: 1 / -1; }
+}
+@media (max-width: 960px) {
+  .inaugurator { grid-template-columns: 1fr; gap: 24px; padding: 18px; margin-bottom: 44px; }
+  .inaugurator__body { padding-right: 0; }
+  .inaug-band { padding: 44px 0; }
+}
+@media (max-width: 640px) {
+  .inaugurator--band { grid-template-columns: 1fr; text-align: center; justify-items: center; padding: 22px 18px; }
+  .inaugurator--band .eyebrow { justify-content: center; }
+  .inaugurator__cta .btn { width: 100%; }
+}
+
 @media (max-width: 960px) {
   .banner__inner { grid-template-columns: 1fr; gap: 0; }
   .banner__visual { display: none; }
