@@ -1244,6 +1244,37 @@ svg { fill: currentColor; }
 @media (max-width: 960px) { .mosaic, .mosaic--4 { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
 @media (max-width: 480px) { .mosaic__item figcaption { font-size: .78rem; } }
 
+/* ---------- Pharmacy highlight ---------- */
+.pharma { background: linear-gradient(180deg, var(--white), var(--green-50)); }
+.page-treatments .pharma { background: var(--white); }
+.pharma__inner { display: grid; grid-template-columns: 1.05fr 1fr; gap: 70px; align-items: center; }
+.pharma__media { position: relative; padding: 0 0 70px 0; }
+.pharma__main {
+  border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 16 / 11;
+  background: var(--green-100); position: relative;
+}
+.pharma__main::before { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(255,255,255,.55); border-radius: calc(var(--radius-lg) - 10px); z-index: 1; pointer-events: none; }
+.pharma__main img { width: 100%; height: 100%; object-fit: cover; }
+.pharma__thumb {
+  position: absolute; right: -24px; bottom: 0; width: 46%; border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow); border: 6px solid var(--white); background: var(--white); aspect-ratio: 4 / 3;
+}
+.pharma__thumb img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.pharma__thumb span {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 12px 10px; font-size: .8rem; font-weight: 700; color: var(--white);
+  background: linear-gradient(180deg, transparent, rgba(20,61,39,.85));
+}
+.pharma__content p { color: var(--ink-soft); }
+@media (max-width: 960px) {
+  .pharma__inner { grid-template-columns: 1fr; gap: 44px; }
+  .pharma__media { padding-bottom: 56px; }
+  .pharma__thumb { right: 0; width: 50%; }
+}
+@media (max-width: 640px) {
+  .pharma__media { padding-bottom: 0; }
+  .pharma__thumb { position: static; width: 100%; margin-top: 14px; aspect-ratio: 16 / 9; border: 0; }
+}
+
 /* ---------- Inaugurated-by highlight ---------- */
 .inaugurator {
   position: relative; overflow: hidden; display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center;
