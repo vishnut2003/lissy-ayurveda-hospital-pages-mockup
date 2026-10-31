@@ -1037,3 +1037,105 @@ svg { fill: currentColor; }
   .dosha__item { grid-template-columns: 48px 1fr; }
   .dosha__symbol { width: 48px; height: 48px; }
 }
+
+/* =========================================================
+   Certification, press coverage & inauguration (Oct 2026 update)
+   ========================================================= */
+
+/* ---------- ISO badge ---------- */
+.badge-iso {
+  display: inline-flex; align-items: center; gap: 7px; vertical-align: middle;
+  background: var(--green-50); color: var(--green-800); border: 1px solid var(--green-100);
+  border-radius: 999px; padding: 5px 12px 5px 8px; font-size: .74rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+}
+.badge-iso::before {
+  content: ""; width: 16px; height: 16px; border-radius: 50%; flex: 0 0 16px;
+  background: var(--green-600) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12l5 5L20 7' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/10px no-repeat;
+}
+.badge-iso--light { background: rgba(255,255,255,.08); color: #dcebe0; border-color: rgba(255,255,255,.16); }
+.hero__pills, .banner__pills { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 18px; }
+.hero__pills .pill, .banner__pills .pill { margin-left: 0; }
+.tagline { font-family: var(--font-head); font-style: italic; font-size: 1.3rem; color: var(--green-700); margin: -8px 0 18px; }
+
+/* ---------- Press coverage ---------- */
+.press { background: var(--white); }
+.press__grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+.press__item {
+  margin: 0; background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; transition: transform .25s, box-shadow .25s;
+}
+.press__item:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+.press__item a { display: block; }
+.press__item img {
+  width: 100%; aspect-ratio: 1 / 1; object-fit: contain; object-position: center;
+  background: var(--white); padding: 8px; border-bottom: 1px solid var(--line);
+}
+.press__item figcaption { padding: 12px 14px 14px; font-size: .86rem; font-weight: 700; color: var(--green-900); line-height: 1.35; }
+.press__item figcaption small { display: block; font-weight: 500; color: var(--muted); font-size: .78rem; margin-top: 3px; }
+.press__more { text-align: center; margin-top: 30px; }
+.press__note { text-align: center; color: var(--muted); font-size: .88rem; margin: 22px auto 0; max-width: 680px; }
+
+/* ---------- Accreditations & licences ---------- */
+.cert { background: var(--cream); }
+.cert__inner { display: grid; grid-template-columns: .85fr 1.3fr; gap: 60px; align-items: start; }
+.cert__frame {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px;
+  box-shadow: var(--shadow); max-width: 420px; margin: 0 auto;
+}
+.cert__frame img { width: 100%; border-radius: var(--radius-sm); }
+.cert__links { display: flex; flex-wrap: wrap; gap: 12px 22px; justify-content: center; margin-top: 18px; font-size: .9rem; }
+.cert__rows { display: grid; gap: 16px; margin-top: 26px; }
+.cert__row { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; }
+.cert__row h3 {
+  font-size: 1.05rem; font-family: var(--font-body); font-weight: 700; color: var(--green-900);
+  margin-bottom: 12px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.cert__row dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; margin: 0; font-size: .92rem; }
+.cert__row dt { color: var(--muted); font-weight: 600; }
+.cert__row dd { margin: 0; color: var(--ink); }
+.cert__row code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .84rem;
+  background: var(--green-50); color: var(--green-800); padding: 2px 7px; border-radius: 6px;
+}
+
+/* ---------- Inauguration ---------- */
+.inaug { background: var(--white); }
+.inaug__inner { display: grid; grid-template-columns: 1.25fr .9fr; gap: 56px; align-items: start; }
+.inaug__videos { display: grid; gap: 22px; }
+.inaug__videos .video__frame { max-width: none; }
+.inaug__videos .video__caption { margin-top: 10px; }
+.inaug__facts { display: grid; gap: 12px; margin: 22px 0 0; }
+.inaug__facts li {
+  display: flex; gap: 14px; align-items: flex-start; background: var(--cream);
+  border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; font-size: .93rem; line-height: 1.45;
+}
+.inaug__facts li > span:first-child { flex: 0 0 38px; height: 38px; display: grid; place-items: center; border-radius: 11px; background: var(--green-100); font-size: 1.1rem; }
+.inaug__facts strong { display: block; color: var(--green-900); }
+.inaug__facts small { color: var(--muted); }
+
+/* ---------- Gallery sub-sections ---------- */
+.gallery__title { font-family: var(--font-head); font-size: 2rem; color: var(--green-900); margin: 60px 0 8px; scroll-margin-top: 110px; }
+.gallery__sub { color: var(--ink-soft); margin: 0 0 24px; max-width: 720px; }
+
+/* ---------- Footer certification ---------- */
+.footer__brand .footer__cert { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.footer__cert small { font-size: .78rem; color: #9fb8a4; }
+
+/* anchors landing under the sticky header */
+#inauguration, #press, #accreditations { scroll-margin-top: 100px; }
+
+@media (max-width: 1080px) {
+  .press__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 960px) {
+  .cert__inner, .inaug__inner { grid-template-columns: 1fr; gap: 40px; }
+  .press__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .press__grid { gap: 12px; }
+  .press__item figcaption { padding: 10px 12px 12px; font-size: .8rem; }
+  .cert__row dl { grid-template-columns: 1fr; gap: 2px 0; }
+  .cert__row dd { margin-bottom: 8px; }
+  .gallery__title { font-size: 1.7rem; margin-top: 48px; }
+}
+.gallery__item > a { display: block; width: 100%; height: 100%; }
